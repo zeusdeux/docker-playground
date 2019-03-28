@@ -1,6 +1,6 @@
 # docker-test
 
-An example repo to back a TIL
+An example repo to back a [TIL](https://til.mudit.xyz/18) and to host things I learn about `docker` and `docker-compose`.
 
 Say you have a docker multi stage build and you need to consume built artifacts both
 within the build - in the following stage(s) for example - and outside it in different ways (push them to s3 for example).
