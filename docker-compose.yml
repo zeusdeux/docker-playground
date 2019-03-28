@@ -1,0 +1,23 @@
+version: "2.3"
+
+services:
+  base:
+    image: docker-test-base
+    build:
+      context: .
+      target: base
+    volumes:
+      - ./output:/app/output
+
+  generate-artifacts:
+    image: docker-test-build
+    container_name: docker-test-build-container
+    build:
+      context: .
+      target: built
+
+  prod:
+    image: docker-test-prod
+    build:
+      context: .
+      target: prod
