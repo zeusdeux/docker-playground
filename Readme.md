@@ -16,7 +16,9 @@ docker-compose build prod # to build your prod image
 # this will build the generate-artifacts image but that is
 # super quick since all the layers needed by it are cached due
 # to building the prod image (which uses it internally)
-docker-compose up --no-start generate-artifacts
+# the --build causes a rebuild of the artifacts image so that
+# we can incorporate changes in environment like CIRCLE_SHA1 for e.g.,
+docker-compose up --no-start --build generate-artifacts
 
 # followed by docker cp to copy the output directory from image
 # to host filesystem. Also, the container_name defined in docker-compose.yml
